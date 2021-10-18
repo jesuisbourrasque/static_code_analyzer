@@ -1,12 +1,12 @@
 class PEP8:
 
     def __init__(self, code: list):
-        self.issues = []
+        self.issues = set()
         self.code = code
 
     def check_length(self, ln_num, line):
         if len(line) > 79:
-            self.issues.append(f"Line {ln_num}: S001 Too Long")
+            self.issues.add(f"Line {ln_num}: S001 Too Long")
 
     def output_issues(self):
         for issue in self.issues:
@@ -39,3 +39,4 @@ class StaticCodeAnalyzer:
 
 program = StaticCodeAnalyzer()
 program.main()
+
